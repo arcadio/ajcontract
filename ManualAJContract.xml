@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AJContract" default="generateContractsManually" basedir=".">
+	<target name="generateContractsManually" description="Generates ajcontract code using javac annotation processor for all files">
+		<!--Restricted to test in order to avoid erasing the processor-->
+		<touch>
+			<fileset dir="org/ajcontract/test">
+				<include name="**/*.java"/>
+			</fileset>
+		</touch>
+		<javac srcdir="org/ajcontract/test" classpath="${classpath}" listfiles="yes" failonerror="true">
+			<compilerarg line="-processor org.ajcontract.annotationprocessor.AJContractAnnotationProcessor"/>
+			<compilerarg line="-proc:only"/>
+			<compilerarg line="-s &quot;${basedir}&quot;"/>
+		</javac>
+	</target>
+</project>
