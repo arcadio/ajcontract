@@ -1,0 +1,11 @@
+Design by contract extension to Java. Defines annotations to specify
+pre-conditions, post-conditions and object invariants. Annotations are
+processed by a javac plugin and injected into bytecodes.
+
+* Dependencies
+
+Java SE (>= 6) and [[https://eclipse.org/aspectj][AspectJ]] (>= 1.5).
+
+* License
+
+The source code is licensed under the [[https://www.gnu.org/licenses/gpl-3.0.html][GNU General Public License v3.0]].
