@@ -1,6 +1,6 @@
 Design by contract extension to Java. Defines annotations to specify
 pre-conditions, post-conditions and object invariants. Annotations are
-processed by a javac plugin and injected into bytecodes.
+processed by a javac plugin and injected into JVM bytecode.
 
 * Dependencies
 
