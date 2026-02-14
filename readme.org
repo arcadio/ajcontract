@@ -1,10 +1,42 @@
-Design by contract extension to Java. Defines annotations to specify
-pre-conditions, post-conditions and object invariants. Annotations are
-processed by a javac plugin and injected into JVM bytecode.
+Design by contract (DbC) extension to Java. Defines annotations to
+specify pre-conditions, post-conditions and object
+invariants. Annotations are processed by a javac plugin and injected
+into JVM bytecode using aspect-oriented programming (AOP).
 
 * Dependencies
 
 Java SE (>= 6) and [[https://eclipse.org/aspectj][AspectJ]] (>= 1.5).
+
+* Usage
+
+1. Annotate your code with ~@Requires~, ~@Ensures~, and
+   ~@ObjectInvariant~ DbC specifications. Examples are showcased in
+   ~org.ajcontract.test~.
+
+2. Compile DbC specifications by passing a ~-processor~ flag to
+   ~javac~ with ~AJContractAnnotationProcessor~ as an argument, as
+   illustrated in the Ant task defined in ~AJContract.xml~.
+
+3. Weave generated aspects into bytecode using the AspectJ
+   compiler. The result are standard ~.class~ files that contain
+   additional runtime checks, which will throw unchecked exceptions if
+   a contract is violated.
+
+* Design
+
+- DbC annotations :: ~org.ajcontract.annotation~ provides standard
+  Java annotations to specify pre-conditions, post-conditions, and
+  object invariants.
+
+- Code generator :: ~org.ajcontract.annotationprocessor~ provides a
+  visitor-based transpiler that converts annotations into AspectJ. It
+  implements the standard ~javax.annotation.processing.Processor~
+  interface, allowing it to plug directly into the ~javac~ compilation
+  lifecycle.
+
+- Test suite :: ~org.ajcontract.test~ is a set of JUnit tests that
+  verify contract enforcement across various scenarios, such as
+  generics and nested classes.
 
 * License
 
