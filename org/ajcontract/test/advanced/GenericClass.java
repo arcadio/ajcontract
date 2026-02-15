@@ -11,17 +11,17 @@ public class GenericClass<E> {
     @Requires(precondition = "list != null")
     @Ensures("this.list == list")
     public GenericClass(E list) {
-	this.list = list;
+        this.list = list;
     }
 
     @Ensures("returnval == list")
     public E getList() {
-	return list;
+        return list;
     }
 
     @Requires(precondition = "list != null")
     @Ensures("this.list == list")
     public void setList(E list) {
-	this.list = list;
+        this.list = list;
     }
 }

@@ -10,10 +10,10 @@ import org.aspectj.lang.SoftException;
  */
 privileged aspect IOExceptionHandler {
     declare soft: IOException: execution(* CodeGeneratorVisitor.*(..));
-	
-    after(CodeGeneratorVisitor codeGeneratorVisitor) throwing(SoftException softException): 
+
+    after(CodeGeneratorVisitor codeGeneratorVisitor) throwing(SoftException softException):
         target(codeGeneratorVisitor) &&
-        execution(* CodeGeneratorVisitor.*(..)) { 
-        	codeGeneratorVisitor.codeWriter.close(); 
+        execution(* CodeGeneratorVisitor.*(..)) {
+            codeGeneratorVisitor.codeWriter.close();
         }
 }

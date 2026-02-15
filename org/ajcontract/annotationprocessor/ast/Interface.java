@@ -7,6 +7,6 @@ import javax.lang.model.element.TypeElement;
  */
 public class Interface extends Type<Interface> {
     public Interface(TypeElement element) {
-	super(element);
+        super(element);
     }
 }

@@ -7,6 +7,6 @@ import javax.lang.model.element.ExecutableElement;
  */
 public class Method extends Executable<Type<?>> {
     public Method(ExecutableElement element, Type<?> enclosingType) {
-	super(element, enclosingType);
+        super(element, enclosingType);
     }
 }

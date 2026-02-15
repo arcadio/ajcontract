@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="AJContract" default="generateContracts" basedir=".">
-	<target name="generateContracts" description="Generates ajcontract code using javac annotation processor">
-		<!--Restricted to test in order to avoid erasing the processor-->
-		<depend srcdir="org/ajcontract/test" closure="yes"/>
-		<javac srcdir="org/ajcontract/test" classpath="${classpath}" listfiles="yes" failonerror="true">
-			<compilerarg line="-processor org.ajcontract.annotationprocessor.AJContractAnnotationProcessor"/>
-			<compilerarg line="-proc:only"/>
-			<compilerarg line="-s &quot;${basedir}&quot;"/>
-		</javac>
-	</target>
+    <target name="generateContracts" description="Generates ajcontract code using javac annotation processor">
+        <!--Restricted to test in order to avoid erasing the processor-->
+        <depend srcdir="org/ajcontract/test" closure="yes"/>
+        <javac srcdir="org/ajcontract/test" classpath="${classpath}" listfiles="yes" failonerror="true">
+            <compilerarg line="-processor org.ajcontract.annotationprocessor.AJContractAnnotationProcessor"/>
+            <compilerarg line="-proc:only"/>
+            <compilerarg line="-s &quot;${basedir}&quot;"/>
+        </javac>
+    </target>
 </project>

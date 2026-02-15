@@ -7,6 +7,6 @@ import javax.lang.model.element.ExecutableElement;
  */
 public class Constructor extends Executable<Klass> {
     public Constructor(ExecutableElement element, Klass enclosingClass) {
-	super(element, enclosingClass);
+        super(element, enclosingClass);
     }
 }

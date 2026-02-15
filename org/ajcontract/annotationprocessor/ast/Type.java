@@ -2,7 +2,6 @@ package org.ajcontract.annotationprocessor.ast;
 
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.TypeElement;
-
 import org.ajcontract.annotation.Ensures;
 import org.ajcontract.annotation.Requires;
 
@@ -16,36 +15,36 @@ public abstract class Type<E extends Type<E>> extends ASTNode<TypeElement> {
     private NodeMap<ExecutableElement, Method> methods;
 
     public Type(TypeElement element) {
-	super(element);
-	extended = null;
-	final Type<?> enclosingType = this;
-	methods = new NodeMap<ExecutableElement, Method>() {
-	    @Override
-	    public Method create(ExecutableElement element) {
-		return new Method(element, enclosingType);
-	    }
-	};
+        super(element);
+        extended = null;
+        final Type<?> enclosingType = this;
+        methods = new NodeMap<ExecutableElement, Method>() {
+            @Override
+            public Method create(ExecutableElement element) {
+                return new Method(element, enclosingType);
+            }
+        };
     }
 
     public E getExtended() {
-	return extended;
+        return extended;
     }
 
     public void setExtended(E extended) {
-	this.extended = extended;
+        this.extended = extended;
     }
 
     public void addContractMethod(ExecutableElement method, Requires requires) {
-	Method m = methods.get(method);
-	m.setRequires(requires);
+        Method m = methods.get(method);
+        m.setRequires(requires);
     }
 
     public void addContractMethod(ExecutableElement method, Ensures ensures) {
-	Method m = methods.get(method);
-	m.setEnsures(ensures);
+        Method m = methods.get(method);
+        m.setEnsures(ensures);
     }
 
     public Iterable<Method> getMethods() {
-	return methods.values();
+        return methods.values();
     }
 }

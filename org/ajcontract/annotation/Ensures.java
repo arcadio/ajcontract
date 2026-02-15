@@ -9,7 +9,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * Annotation used to specify preconditions.
+ * Annotation used to specify post-conditions.
  */
 @Documented
 @Retention(SOURCE)

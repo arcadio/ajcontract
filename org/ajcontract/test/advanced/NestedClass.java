@@ -7,22 +7,22 @@ import org.ajcontract.annotation.Requires;
 public class NestedClass {
     @ObjectInvariant("integer != null")
     static class Nested {
-	private Integer integer;
+        private Integer integer;
 
-	@Requires(precondition = "integer != null")
-	@Ensures("this.integer == integer")
-	public Nested(Integer integer) {
-	    this.integer = integer;
-	}
+        @Requires(precondition = "integer != null")
+        @Ensures("this.integer == integer")
+        public Nested(Integer integer) {
+            this.integer = integer;
+        }
 
-	public Integer getInteger() {
-	    return integer;
-	}
+        public Integer getInteger() {
+            return integer;
+        }
 
-	@Requires(precondition = "integer != null")
-	@Ensures("this.integer == integer")
-	public void setInteger(Integer integer) {
-	    this.integer = integer;
-	}
+        @Requires(precondition = "integer != null")
+        @Ensures("this.integer == integer")
+        public void setInteger(Integer integer) {
+            this.integer = integer;
+        }
     }
 }

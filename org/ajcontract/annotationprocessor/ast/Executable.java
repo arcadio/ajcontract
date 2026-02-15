@@ -1,7 +1,6 @@
 package org.ajcontract.annotationprocessor.ast;
 
 import javax.lang.model.element.ExecutableElement;
-
 import org.ajcontract.annotation.Ensures;
 import org.ajcontract.annotation.Requires;
 
@@ -9,8 +8,7 @@ import org.ajcontract.annotation.Requires;
  * Generic node that represents an executable:
  * a <i>Constructor</i> or a <i>Method</i>.
  */
-public abstract class Executable<T extends Type<T>> extends
-	ASTNode<ExecutableElement> {
+public abstract class Executable<T extends Type<T>> extends ASTNode<ExecutableElement> {
     private T enclosingType;
 
     private Requires requires;
@@ -18,29 +16,29 @@ public abstract class Executable<T extends Type<T>> extends
     private Ensures ensures;
 
     public Executable(ExecutableElement element, T enclosingType) {
-	super(element);
-	this.enclosingType = enclosingType;
-	requires = null;
-	ensures = null;
+        super(element);
+        this.enclosingType = enclosingType;
+        requires = null;
+        ensures = null;
     }
 
     public T getEnclosingType() {
-	return enclosingType;
+        return enclosingType;
     }
 
     public Requires getRequires() {
-	return requires;
+        return requires;
     }
 
     public Ensures getEnsures() {
-	return ensures;
+        return ensures;
     }
 
     public void setRequires(Requires requires) {
-	this.requires = requires;
+        this.requires = requires;
     }
 
     public void setEnsures(Ensures ensures) {
-	this.ensures = ensures;
+        this.ensures = ensures;
     }
 }

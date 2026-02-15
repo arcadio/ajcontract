@@ -10,10 +10,10 @@ public abstract class ASTNode<E extends Element> {
     private final E element;
 
     public ASTNode(E element) {
-	this.element = element;
+        this.element = element;
     }
 
     public E getElement() {
-	return element;
+        return element;
     }
 }
